@@ -16,6 +16,19 @@ export default function Pin({ x, y }: Pin) {
           position: absolute;
           left: ${x};
           top: ${y};
+          cursor: pointer;
+          animation: bounce 0.8s infinite;
+          animation-delay: ${Number(x.slice(0, 3)) / 1000}s;
+        }
+
+        @keyframes bounce {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px) scale(1.1);
+          }
         }
       `}</style>
     </>
