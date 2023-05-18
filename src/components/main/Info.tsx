@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+
 interface Info {
   yagujang: string[];
   closeWindow: () => void;
@@ -12,15 +15,21 @@ export default function Info({ yagujang, closeWindow }: Info) {
             <p key={name}>{name}</p>
           ))}
         </div>
-        <button onClick={closeWindow}>x</button>
+        <button onClick={closeWindow}>
+          <FontAwesomeIcon icon={faClose} />
+        </button>
       </div>
       <style jsx>{`
         .info {
+          top: -20px;
+          left: -125px;
+          width: 230px;
           z-index: 1;
-          width: 300px;
+          padding: 16px;
+          align-items: start;
           position: absolute;
           background: #ffffff;
-          padding: 16px;
+          border-radius: 10px;
         }
         .info button {
           border: none;
