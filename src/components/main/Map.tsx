@@ -43,13 +43,14 @@ export default function Map() {
       y: "400px",
     },
   ];
+
   return (
     <>
       <div className="main d-flex justify-content-center align-items-center">
         <div>
           <img src="/img/main/map.png" width="480px" />
           {coords.map((coord) => (
-            <Pin key={coord.city} x={coord.x} y={coord.y} />
+            <Pin key={coord.city} city={coord.city} x={coord.x} y={coord.y} />
           ))}
         </div>
       </div>
