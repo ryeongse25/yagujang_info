@@ -58,7 +58,7 @@ export default function Map() {
         .main {
           height: 100vh;
           overflow-y: hidden;
-          background: #50c878;
+          background: var(--main-color);
           padding-top: var(--main-header-height);
         }
         .main > div {
