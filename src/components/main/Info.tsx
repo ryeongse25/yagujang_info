@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,12 +8,20 @@ interface Info {
 }
 
 export default function Info({ yagujang, closeWindow }: Info) {
+  const router = useRouter();
+
+  const onClick = (name: string) => {
+    router.push(`/detail?name=${name}`);
+  };
+
   return (
     <>
       <div className="info d-flex justify-content-between">
         <div>
           {yagujang.map((name) => (
-            <p key={name}>{name}</p>
+            <p key={name} onClick={() => onClick(name)}>
+              {name}
+            </p>
           ))}
         </div>
         <button onClick={closeWindow}>
